@@ -3,17 +3,6 @@
   <p>
     add something... <b>{{ name }}</b>
   </p>
-  <label for="name"></label>
-  <input
-    value="{{ name }}"
-    type="text"
-    id="name"
-    name="name"
-    placeholder="Nhập họ và tên của bạn"
-    required
-  />
-  <br />
-  <input type="text" [value]="name" title=" this is {{ name }}" />
-  <br />
-  <input type="text" [value]="name" [title]="'this is ' + name" />
+  <h2 *ngIf="age > 18">bạn đã già rồi !</h2>
+  <h2 *ngIf="age <= 18">bạn quá trẻ rồi !</h2>
 </div>
