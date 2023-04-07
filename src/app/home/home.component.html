@@ -3,4 +3,17 @@
   <p>
     add something... <b>{{ name }}</b>
   </p>
+  <label for="name"></label>
+  <input
+    value="{{ name }}"
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Nhập họ và tên của bạn"
+    required
+  />
+  <br />
+  <input type="text" [value]="name" title=" this is {{ name }}" />
+  <br />
+  <input type="text" [value]="name" [title]="'this is ' + name" />
 </div>
