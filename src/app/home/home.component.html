@@ -1,8 +1,40 @@
 <div class="test">
   <h1>This is Component test Home</h1>
   <p>
-    add something... <b>{{ name }}</b>
+    <b>add something fruits... </b>
   </p>
-  <h2 *ngIf="age > 18">bạn đã già rồi !</h2>
-  <h2 *ngIf="age <= 18">bạn quá trẻ rồi !</h2>
+
+  <table class="table">
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+    <tr *ngFor="let fruit of fruits; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ fruit.name | uppercase }}</td>
+      <td>{{ fruit.price | currency : "VND" }}</td>
+    </tr>
+  </table>
+  <!-- combo box -->
+  <br />
+  <div class="combo-box">
+    <div>
+      Tỉnh / Thành Phố:
+      <select id="city" (change)="changeCountry($event)">
+        <option *ngFor="let country of countryData" value="{{ country.city }}">
+          {{ country.city }}
+        </option>
+      </select>
+    </div>
+    <!--  -->
+    <div>
+      Quận / Huyện:
+      <select id="district">
+        <option *ngFor="let district of districts" value="{{ district }}">
+          {{ district }}
+        </option>
+      </select>
+    </div>
+  </div>
 </div>
