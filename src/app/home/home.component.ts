@@ -113,13 +113,13 @@ export class HomeComponent implements OnInit {
     if (!city) return;
 
     //ex: 1
-    // const search = this.countryData.filter((data) => data.city === city);
-    // if (search.length > 0) {
-    //   this.districts = search[0].district;
-    // }
+    const search = this.countryData.filter((data) => data.city === city);
+    if (search.length > 0) {
+      this.districts = search[0].district;
+    }
 
     //ex: 2
-    this.districts =
-      this.countryData.find((data) => data.city === city)?.district || [];
+    // this.districts =
+    //   this.countryData.find((data) => data.city === city)?.district || [];
   }
 }
